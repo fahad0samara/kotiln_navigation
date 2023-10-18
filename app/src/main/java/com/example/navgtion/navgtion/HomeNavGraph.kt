@@ -14,8 +14,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.example.navgtion.navgtion.nav_graph.detailsNavGraph
 import com.example.navgtion.screen.Cart
 import com.example.navgtion.screen.DetailsInfo
+import com.example.navgtion.screen.Home
 import com.example.navgtion.screen.Profile
 import com.example.navgtion.screen.Settings
 
@@ -27,12 +29,7 @@ fun HomeNavGraph(navController: NavHostController) {
         route = Graph.HOME
     ) {
         composable(route = BottomBarScreen.Home.route) {
-            ScreenContent(
-                name = BottomBarScreen.Home.route,
-                onClick = {
-                    navController.navigate(Graph.DETAILS)
-                }
-            )
+            Home()
         }
         composable(route = BottomBarScreen.Cart.route) {
             Cart()
@@ -43,7 +40,9 @@ fun HomeNavGraph(navController: NavHostController) {
 
         }
         composable(route = BottomBarScreen.Settings.route) {
-            Settings()
+            Settings(
+                navController = navController
+            )
 
 
         }
@@ -55,41 +54,8 @@ fun HomeNavGraph(navController: NavHostController) {
     }
 }
 
-fun NavGraphBuilder.detailsNavGraph(navController: NavHostController) {
-    navigation(
-        route = Graph.DETAILS,
-        startDestination = DetailsScreen.Information.route
-    ) {
-        composable(route = DetailsScreen.Information.route) {
-            ScreenContent(name = DetailsScreen.Information.route) {
-                navController.navigate(DetailsScreen.Overview.route)
-            }
-        }
-        composable(route = DetailsScreen.Overview.route) {
-            ScreenContent(name = DetailsScreen.Overview.route) {
-                navController.popBackStack(
-                    route = DetailsScreen.Information.route,
-                    inclusive = false
-                )
-            }
-        }
-    }
-}
 
-@Composable
-fun ScreenContent(name: String, onClick: () -> Unit) {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            modifier = Modifier.clickable { onClick() },
-            text = name,
 
-            fontWeight = FontWeight.Bold
-        )
-    }
-}
 
 sealed class DetailsScreen(val route: String) {
     data object Information : DetailsScreen(route = "INFORMATION")
