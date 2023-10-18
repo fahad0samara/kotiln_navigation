@@ -15,6 +15,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.example.navgtion.screen.Cart
+import com.example.navgtion.screen.Profile
+import com.example.navgtion.screen.Settings
 
 
 @Composable
@@ -32,17 +35,18 @@ fun HomeNavGraph(navController: NavHostController) {
                 }
             )
         }
+        composable(route = BottomBarScreen.Cart.route) {
+            Cart()
+
+        }
         composable(route = BottomBarScreen.Profile.route) {
-            ScreenContent(
-                name = BottomBarScreen.Profile.route,
-                onClick = { }
-            )
+            Profile()
+
         }
         composable(route = BottomBarScreen.Settings.route) {
-            ScreenContent(
-                name = BottomBarScreen.Settings.route,
-                onClick = { }
-            )
+            Settings()
+
+
         }
         detailsNavGraph(navController = navController)
     }
