@@ -3,7 +3,6 @@ package com.example.navgtion.navgtion
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -16,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.navgtion.screen.Cart
+import com.example.navgtion.screen.DetailsInfo
 import com.example.navgtion.screen.Profile
 import com.example.navgtion.screen.Settings
 
@@ -23,9 +23,8 @@ import com.example.navgtion.screen.Settings
 @Composable
 fun HomeNavGraph(navController: NavHostController) {
     NavHost(
-        navController = navController,
-        route = Graph.HOME,
-        startDestination = BottomBarScreen.Home.route
+        navController, BottomBarScreen.Home.route,
+        route = Graph.HOME
     ) {
         composable(route = BottomBarScreen.Home.route) {
             ScreenContent(
@@ -48,7 +47,11 @@ fun HomeNavGraph(navController: NavHostController) {
 
 
         }
+
         detailsNavGraph(navController = navController)
+
+
+
     }
 }
 

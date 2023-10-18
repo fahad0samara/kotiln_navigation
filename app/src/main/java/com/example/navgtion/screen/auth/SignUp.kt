@@ -1,4 +1,4 @@
-package com.example.navgtion.screen
+package com.example.navgtion.screen.auth
 
 import androidx.compose.runtime.Composable
 

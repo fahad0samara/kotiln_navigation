@@ -1,23 +1,13 @@
 package com.example.navgtion.navgtion
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.navgtion.screen.Forgot
+import com.example.navgtion.screen.auth.Forgot
 
-import com.example.navgtion.screen.Login
-import com.example.navgtion.screen.SignUp
+import com.example.navgtion.screen.auth.Login
+import com.example.navgtion.screen.auth.SignUp
 
 fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
     navigation(
@@ -25,7 +15,13 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
         startDestination = AuthScreen.Login.route
     ) {
         composable(route = AuthScreen.Login.route) {
-            Login()
+            Login(
+                onClick = {
+                    navController.popBackStack()
+                    navController.navigate(Graph.HOME)
+                },
+
+            )
 
 
         }

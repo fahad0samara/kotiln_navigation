@@ -4,6 +4,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.ShoppingCart
+
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class BottomBarScreen(
@@ -12,25 +14,26 @@ sealed class BottomBarScreen(
     val icon: ImageVector
 ) {
     data object Home : BottomBarScreen(
-        route = "HOME",
-        title = "HOME",
+        route = "Home",
+        title = "Home",
         icon = Icons.Default.Home
     )
 
     data object Profile : BottomBarScreen(
-        route = "PROFILE",
-        title = "PROFILE",
+        route = "Profile",
+        title = "Profile",
         icon = Icons.Default.Person
     )
     data object Cart : BottomBarScreen(
-        route = "CART",
-        title = "CART",
-        icon = Icons.Default.Person
+        route = "Cart",
+        title = "Cart",
+        icon = Icons.Default.ShoppingCart
+
     )
 
     data object Settings : BottomBarScreen(
-        route = "SETTINGS",
-        title = "SETTINGS",
+        route = "Settings",
+        title = "Settings",
         icon = Icons.Default.Settings
     )
 }
