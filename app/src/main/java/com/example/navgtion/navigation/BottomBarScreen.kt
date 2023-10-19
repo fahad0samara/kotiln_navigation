@@ -1,4 +1,4 @@
-package com.example.navgtion.navgtion
+package com.example.navgtion.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home

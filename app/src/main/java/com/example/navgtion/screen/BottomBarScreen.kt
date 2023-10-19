@@ -3,7 +3,6 @@ package com.example.navgtion.screen
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material3.Icon
-import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -14,15 +13,14 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.navgtion.navgtion.BottomBarScreen
-import com.example.navgtion.navgtion.HomeNavGraph
-import androidx.compose.material3.Icon
+import com.example.navgtion.navigation.BottomBarScreen
+import com.example.navgtion.navigation.HomeNavGraph
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun HomeScreen(navController: NavHostController = rememberNavController()) {
+fun BottomBarScreen(navController: NavHostController = rememberNavController()) {
     Scaffold(
         bottomBar = { BottomBar(navController = navController) }
     ) {

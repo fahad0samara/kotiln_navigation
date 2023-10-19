@@ -1,22 +1,12 @@
-package com.example.navgtion.navgtion
+package com.example.navgtion.navigation
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 
-import androidx.compose.ui.text.font.FontWeight
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.navigation
-import com.example.navgtion.navgtion.nav_graph.detailsNavGraph
+import com.example.navgtion.navigation.nav_graph.detailsNavGraph
 import com.example.navgtion.screen.Cart
-import com.example.navgtion.screen.DetailsInfo
 import com.example.navgtion.screen.Home
 import com.example.navgtion.screen.Profile
 import com.example.navgtion.screen.Settings
@@ -58,6 +48,6 @@ fun HomeNavGraph(navController: NavHostController) {
 
 
 sealed class DetailsScreen(val route: String) {
-    data object Information : DetailsScreen(route = "INFORMATION")
+    data object Information : DetailsScreen(route = "DetailsInfo")
     data object Overview : DetailsScreen(route = "OVERVIEW")
 }

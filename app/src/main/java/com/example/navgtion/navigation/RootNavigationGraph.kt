@@ -1,10 +1,11 @@
-package com.example.navgtion.navgtion
+package com.example.navgtion.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.navgtion.screen.HomeScreen
+import com.example.navgtion.screen.BottomBarScreen
+
 
 @Composable
 fun RootNavigationGraph(navController: NavHostController) {
@@ -15,7 +16,7 @@ fun RootNavigationGraph(navController: NavHostController) {
     ) {
         authNavGraph(navController = navController)
         composable(route = Graph.HOME) {
-            HomeScreen()
+            BottomBarScreen()
         }
     }
 }
