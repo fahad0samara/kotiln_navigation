@@ -16,17 +16,29 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
     ) {
         composable(route = AuthScreen.Login.route) {
             Login(
-                onClick = {
-                    navController.popBackStack()
+                onLoginClick = { _, _ ->
+                    // Implement your login logic here
+                    // After successful login, navigate to the home screen
                     navController.navigate(Graph.HOME)
                 },
-
+                onRegisterClick = {
+                    navController.navigate(AuthScreen.SignUp.route)
+                },
+                onForgotPasswordClick = {
+                    navController.navigate(AuthScreen.Forgot.route)
+                }
             )
-
-
         }
         composable(route = AuthScreen.SignUp.route) {
-            SignUp()
+            SignUp(
+                onRegisterClick = {
+                    // Implement your register logic here
+                    // After successful login, navigate to the home screen
+                    navController.navigate(Graph.HOME)}
+                ,
+                onLoginClick={navController.navigate(AuthScreen.Login.route)}
+            )
+
 
 
 

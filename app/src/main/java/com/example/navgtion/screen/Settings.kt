@@ -27,7 +27,7 @@ contentAlignment = Alignment.Center
 ) {
     Text(
         modifier = Modifier.clickable {
-                                     navController.navigate("deletiles")
+                                     navController.navigate("INFORMATION")
 
         },
         text = "go to the deletiles",
